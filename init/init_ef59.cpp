@@ -27,13 +27,16 @@
 
 #include <stdlib.h>
 #include <android-base/properties.h>
+#include <android-base/logging.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
 #include "util.h"
+#include "init_msm8974.h"
 
 #define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
+
+using android::init::property_set;+using android::init::property_get;
 
 void vendor_load_properties()
 {
@@ -43,7 +46,7 @@ void vendor_load_properties()
     char device_buf[PROP_VALUE_MAX];
     FILE *fp = NULL;
 
-    platform = android::base::GetProperty("ro.board.platform");
+    platform = property_get("ro.board.platform","");
     if (platform != ANDROID_TARGET)
         return;
 
