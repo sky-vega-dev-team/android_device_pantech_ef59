@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2016, The LineageOS Project
+   Copyright (c) 2016, The CyanogenMod Project
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -26,17 +26,13 @@
  */
 
 #include <stdlib.h>
-#include <android-base/properties.h>
-#include <android-base/logging.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
+#include "log.h"
 #include "util.h"
-#include "init_msm8974.h"
 
 #define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
-using android::init::property_set;+using android::init::property_get;
 
 void vendor_load_properties()
 {
@@ -46,13 +42,14 @@ void vendor_load_properties()
     char device_buf[PROP_VALUE_MAX];
     FILE *fp = NULL;
 
-    platform = property_get("ro.board.platform","");
+    platform = property_get("ro.board.platform");
     if (platform != ANDROID_TARGET)
         return;
 
     fp = fopen("/dev/block/platform/msm_sdcc.1/by-name/phoneinfo", "r");
     if ( fp == NULL )
     {
+        INFO("Failed to open info for board version read");
         return;
     }
     else
@@ -63,18 +60,21 @@ void vendor_load_properties()
         fclose(fp);
     }
 
-    android::base::SetProperty("ro.product.model", device_buf);
+    property_set("persist.sys.usb.control", "disable");
+    property_set("persist.sys.isUsbOtgEnabled", "true");
+    property_set("persist.pantech.usb.version=0", "0");
+    property_set("ro.product.model", device_buf);
 
     if (strstr(device_buf, "IM-A890S")) 
     {
-        android::base::SetProperty("ro.product.device", "ef59s");
+        property_set("ro.product.device", "ef59s");
     } 
     else if (strstr(device_buf, "IM-A890K")) 
     {
-        android::base::SetProperty("ro.product.device", "ef59k");
+        property_set("ro.product.device", "ef59k");
     } 
-    else if (strstr(device_buf, "IM-A890L")) 
+    else if (strstr(device_buf, "IM-A890L"))
     {
-        android::base::SetProperty("ro.product.device", "ef59l");
+        property_set("ro.product.device", "ef59l");
     }
 }
