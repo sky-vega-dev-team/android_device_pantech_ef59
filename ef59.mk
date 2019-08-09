@@ -17,5 +17,9 @@
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/atmel_mxt_540s.kl:system/vendor/usr/keylayout/atmel_mxt_540s.kl
+ 
 # Inherit from msm8974-common
 $(call inherit-product, device/pantech/msm8974-common/msm8974.mk)
