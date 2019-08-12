@@ -18,31 +18,18 @@ PLATFORM_PATH := device/pantech/ef59
 # Inherit from msm8974-common
 -include device/pantech/msm8974-common/BoardConfigCommon.mk
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := ef59l,ef59s,ef59k,ef59
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_ef59_defconfig
+TARGET_KERNEL_CONFIG := LineageOS_ef59_defconfig
 
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # Filesystem
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26534215680
-
-# Include path
-#TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
-
-#Ril
-BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10		
-BOARD_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
-
-# NFC
-BOARD_NFC_CHIPSET := pn547
-NXP_CHIP_TYPE := 1
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_ef59

@@ -1,4 +1,6 @@
-# Copyright (C) 2016 The LineageOS Project
+#
+# Copyright (C) 2015-2016 The CyanogenMod Project
+#               2017-2018 The LineageOS Projec
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,10 +17,10 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from ef63 device
+# Inherit from ef65 device
 $(call inherit-product, device/pantech/ef59/ef59.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Call the proprietary setup
@@ -27,12 +29,14 @@ $(call inherit-product-if-exists, vendor/pantech/ef59/ef59-vendor.mk)
 PRODUCT_NAME := lineage_ef59
 PRODUCT_DEVICE := ef59
 PRODUCT_MANUFACTURER := PANTECH
-PRODUCT_MODEL := VEGA SECRET NOTE
+PRODUCT_MODEL := IM-A890
 
 PRODUCT_BRAND := PANTECH
 TARGET_VENDOR := PANTECH
 TARGET_VENDOR_PRODUCT_NAME := ef59
 TARGET_VENDOR_DEVICE_NAME := ef59
 
-# Enable SU
-WITH_SU := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="msm8974-user 4.4.2 KVT49L EF65S_KK.006 release-keys" 
+
+BUILD_FINGERPRINT := VEGA/VEGA_IM-A920S/ef65s:4.4.2/KVT49L/EF65S_KK.006:user/release-keys

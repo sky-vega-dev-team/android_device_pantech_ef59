@@ -17,7 +17,7 @@
 
 set -e
 
-export DEVICE=ef59
+export DEVICE=ef65
 export DEVICE_COMMON=msm8974-common
 export VENDOR=pantech
 

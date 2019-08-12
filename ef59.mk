@@ -17,9 +17,17 @@
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2016-09-01
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/atmel_mxt_540s.kl:system/vendor/usr/keylayout/atmel_mxt_540s.kl
- 
+    $(LOCAL_PATH)/keylayout/cr-tk-300k.kl:system/vendor/usr/keylayout/cr-tk-300k.kl
+
+# Lights
+PRODUCT_PACKAGES += \
+     android.hardware.light@2.0-service.ef59
+
 # Inherit from msm8974-common
 $(call inherit-product, device/pantech/msm8974-common/msm8974.mk)
