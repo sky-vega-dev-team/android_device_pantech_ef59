@@ -23,7 +23,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/cr-tk-300k.kl:system/vendor/usr/keylayout/cr-tk-300k.kl
+    $(LOCAL_PATH)/keylayout/atmel_mxt_540s.kl:system/vendor/usr/keylayout/atmel_mxt_540s.kl
 
 # Lights
 PRODUCT_PACKAGES += \
