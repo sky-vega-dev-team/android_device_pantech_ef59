@@ -18,6 +18,8 @@ PLATFORM_PATH := device/pantech/ef59
 # Inherit from msm8974-common
 -include device/pantech/msm8974-common/BoardConfigCommon.mk
 
+# ReleaseTools
+TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)/releasetools
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
