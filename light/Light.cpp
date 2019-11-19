@@ -31,8 +31,9 @@ namespace implementation {
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
-#define BUTTON_LED      LEDS "kpdbl_menu/"
-#define BUTTON1_LED     LEDS "kpdbl_back/"
+#define BUTTON_LED      LEDS "kpdbl-pwm-1/"
+#define BUTTON1_LED     LEDS "kpdbl-pwm-3/"
+#define BUTTON2_LED     LEDS "kpdbl-pwm-4/"
 #define RED_LED         LEDS "led:rgb_red/"
 #define GREEN_LED       LEDS "led:rgb_green/"
 #define BLUE_LED        LEDS "led:rgb_blue/"
@@ -60,6 +61,7 @@ static void handleButtons(const LightState& state) {
     uint32_t brightness = state.color & 0xFF;
     set(BUTTON_LED BRIGHTNESS, brightness);
     set(BUTTON1_LED BRIGHTNESS, brightness);
+    set(BUTTON2_LED BRIGHTNESS, brightness);
 }
 
 static void handleNotification(const LightState& state) {
