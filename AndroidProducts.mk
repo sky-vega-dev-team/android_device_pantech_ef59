@@ -14,3 +14,8 @@
 # limitations under the License.
  PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_ef59.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_ef59-user \
+    lineage_ef59-userdebug \
+    lineage_ef59-eng
