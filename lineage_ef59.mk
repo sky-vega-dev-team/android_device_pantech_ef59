@@ -29,7 +29,7 @@ $(call inherit-product-if-exists, vendor/pantech/ef59/ef59-vendor.mk)
 PRODUCT_NAME := lineage_ef59
 PRODUCT_DEVICE := ef59
 PRODUCT_MANUFACTURER := PANTECH
-PRODUCT_MODEL := IM-A890
+PRODUCT_MODEL := Vega Secret Note
 
 PRODUCT_BRAND := PANTECH
 TARGET_VENDOR := PANTECH
