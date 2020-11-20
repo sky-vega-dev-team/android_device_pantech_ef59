@@ -17,4 +17,4 @@ Dimensions | 81.5 x 159.4 x 8.85mm - 190g(Black), 153g(White)
 Camera  | 13M wide / 2.1M FULL HD
 
 
-![SKY VEGA SECRET NOTE](http://m.pantech.co.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000005786&fileSn=8 "SKY VEGA SECRET NOTE")
+![SKY VEGA SECRET NOTE](https://github.com/rlawoehd187/device_images/blob/main/Secret%20Note.jpg?raw=true "SKY VEGA SECRET NOTE")
