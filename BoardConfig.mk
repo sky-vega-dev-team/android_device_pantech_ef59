@@ -27,9 +27,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 # Kernel
 TARGET_KERNEL_CONFIG := LineageOS_ef59_defconfig
 
-# ReleaseTools
-TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)/releasetools
-
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
